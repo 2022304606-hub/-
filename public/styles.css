@@ -1,4 +1,4 @@
-/* [사양 정의] 여백을 원천 차단하고 컴포넌트를 꽉 채우는 초고밀도 그리드 아키텍처 */
+/* 여백을 원천 차단하고 컴포넌트를 꽉 채우는 초고밀도 격자형 아키텍처 */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -14,7 +14,6 @@ body {
     padding: 6px;
 }
 
-/* 16:9 완전 매칭 꽉 찬 스크린 빌더 */
 .screen-master-container {
     width: 100%;
     height: 100%;
@@ -28,7 +27,6 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,0.8);
 }
 
-/* 마스터 인포 탑 바 */
 .main-header {
     background: #12162e;
     border: 1px solid #222954;
@@ -61,7 +59,6 @@ body {
     padding: 3px 6px; border-radius: 3px; cursor: pointer; font-size: 9px;
 }
 
-/* 상단 5단 서브 서브 내비게이션 바 스펙 */
 .sub-nav-bar {
     display: flex; gap: 4px; background: #12162e; padding: 4px; border-radius: 4px; border: 1px solid #1e2342; height: 32px;
 }
@@ -71,7 +68,7 @@ body {
 }
 .nav-item.active, .nav-item:hover { background: #1e2342; color: #ff4a85; font-weight: bold; }
 
-/* 4열 초밀도 압축 그리드 알고리즘 */
+/* 4열 초밀도 압축 그리드 레이아웃 */
 .dashboard-grid {
     flex: 1;
     display: grid;
@@ -82,9 +79,8 @@ body {
 
 .grid-column { display: flex; flex-direction: column; gap: 6px; overflow: hidden; height: 100%; }
 
-/* 초밀도 컴포넌트 카드 구조 공통 스펙 */
 .card {
-    background-color: #121424; /* 초밀도 다크룸 모듈 스펙 */
+    background-color: #121424; 
     border: 1px solid #1c1e36;
     border-radius: 4px;
     padding: 6px;
@@ -98,7 +94,7 @@ body {
     text-transform: uppercase; letter-spacing: 0.3px;
 }
 
-/* 내부 높이 비율 가중치 기하학적 매칭 배정 장치 */
+/* 기하학적 매칭 배정 높이 가중치 */
 .grid-column:nth-child(1) .card:nth-child(1) { flex: 1.2; }
 .grid-column:nth-child(1) .card:nth-child(2) { flex: 1.2; }
 .grid-column:nth-child(1) .card:nth-child(3) { flex: 0.6; }
@@ -116,24 +112,17 @@ body {
 .grid-column:nth-child(4) .card:nth-child(3) { flex: 0.9; }
 .grid-column:nth-child(4) .card:nth-child(4) { flex: 1.0; }
 
-/* 하위 세부 블록 컴포넌트 타이트 가두기 */
 .briefing-container { display: flex; flex-direction: column; gap: 3px; }
 .brief-item { background: #070913; padding: 4px; border-radius: 3px; border-left: 2px solid #ff4a85; }
 .brief-item.border-pink { border-left-color: #ff4a85; }
 .brief-item.border-gold { border-left-color: #ffb800; }
 .brief-item.border-mint { border-left-color: #00f0ad; }
-.badge { font-size: 7px; padding: 0 2px; border-radius: 2px; color: #fff; font-weight: bold;}
-.bg-pink { background: #ff4a85; }
-.bg-gold { background: #ffb800; }
-.bg-mint { background: #00f0ad; color: #070913; }
 
 .todo-list { list-style: none; display: flex; flex-direction: column; gap: 3px; overflow-y: auto;}
 .todo-list li { background: #070913; padding: 3px 5px; border-radius: 3px; display: flex; align-items: center; gap: 4px; font-size: 10px;}
-.score { font-size: 7px; margin-left: auto; color: #ff4a85; }
 .tag-pink { color: #ff4a85; font-size: 8px; font-weight: bold;}
 .tag-gold { color: #ffb800; font-size: 8px; font-weight: bold;}
 .tag-blue { color: #3b82f6; font-size: 8px; font-weight: bold;}
-.tag-mint { color: #00f0ad; font-size: 8px; font-weight: bold;}
 
 .todo-input-group, .chat-input-row, .postit-creator-bar { display: flex; gap: 2px; margin-top: 3px; }
 .todo-input-group input, .chat-input-row input, .postit-creator-bar input, .mailer-ui-box input {
@@ -143,25 +132,18 @@ body {
     background: #ff4a85; color: white; border: none; font-size: 9px; padding: 0 6px; border-radius: 3px; cursor: pointer; font-weight: bold;
 }
 
-/* 회의실 배정 맵 */
 .room-timeline { background: #070913; padding: 4px; border-radius: 3px; height: 100%; display: flex; flex-direction: column; justify-content: center;}
 .timeline-hours { display: flex; justify-content: space-between; padding-left: 50px; color: #535b82; font-size: 7px; margin-bottom: 2px;}
 .room-row { display: flex; align-items: center; margin-bottom: 2px;}
 .room-row > span { width: 50px; font-size: 9px; color: #7882b6; }
 .time-block { height: 8px; border-radius: 2px; }
 
-/* 정산 통계 */
 .doc-stats { display: flex; justify-content: space-around; background: #070913; padding: 4px; border-radius: 3px; margin-bottom: 3px;}
 .doc-stats div { text-align: center; font-size: 8px;}
 .doc-stats strong { font-size: 11px; display: block;}
 .doc-table { width: 100%; border-collapse: collapse; font-size: 9px;}
 .doc-table td { padding: 2px; border-bottom: 1px solid #1c1e36; }
-.badge-rect { font-size: 7px; padding: 0 2px; border-radius: 2px; color: white;}
-.badge-rect.red { background: #dc2626; }
-.badge-rect.orange { background: #ea580c; }
-.badge-rect.blue { background: #2563eb; }
 
-/* 2x5 격자 스트레스 히트맵 정밀 복제 주입 스펙 */
 .heatmap-matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: #070913; padding: 4px; border-radius: 3px; flex: 1;}
 .heatmap-cell { height: 11px; border-radius: 1px; }
 
@@ -170,7 +152,6 @@ body {
 .ex-item span { font-size: 7px; color: #7882b6; display: block;}
 .ex-item strong { font-size: 10px; color: #fff; }
 
-/* 기간 결산 데이터 팩 */
 .analytics-tabs { display: flex; gap: 2px; margin-bottom: 3px;}
 .tab-btn { flex: 1; background: #070913; color: #7882b6; border: 1px solid #1c1e36; font-size: 9px; padding: 2px 0; cursor: pointer; border-radius: 2px;}
 .tab-btn.active { background: #ff4a85; color: white; font-weight: bold; border-color: #ff4a85;}
@@ -178,32 +159,27 @@ body {
 
 .chart-container { flex: 1; position: relative; width: 100%; height: 100%; min-height: 50px; }
 
-/* 메신저 박스 */
 .chat-wrapper-box { display: flex; flex-direction: column; height: 100%; flex: 1; }
 .chat-display-area { flex: 1; background: #070913; border: 1px solid #1c1e36; border-radius: 3px; padding: 4px; overflow-y: auto; display: flex; flex-direction: column; gap: 3px; max-height: 75px;}
 .chat-msg-line { font-size: 9px; text-align: left; background: #121424; padding: 2px 4px; border-radius: 2px;}
 .chat-msg-line strong { color: #00f0ad; }
 
-/* 권한 가로 분할 스펙 */
 .role-selector-row { display: flex; justify-content: space-between; background: #070913; padding: 3px; border-radius: 3px; margin-bottom: 3px;}
 .role-selector-row select { background: #121424; color: white; border: 1px solid #1c1e36; font-size: 8px;}
 .btn-save-work { background: #00f0ad; color: #070913; font-weight: bold; border: none; font-size: 8px; padding: 0 4px; border-radius: 2px; cursor: pointer;}
 .work-textarea-grid { display: flex; gap: 3px; flex: 1; }
 .work-textarea-grid textarea { flex: 1; background: #070913; border: 1px solid #1c1e36; color: #e2e8f0; font-size: 8px; resize: none; padding: 3px; border-radius: 3px;}
 
-/* 디지털 포스트잇 익스프레스 */
 .postit-system-body { display: flex; flex-direction: column; height: 100%; gap: 3px; }
 .postit-creator-bar select { background: #070913; color: white; border: 1px solid #1c1e36; font-size: 9px;}
 .postit-render-matrix { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3px; overflow-y: auto; max-height: 60px;}
 .postit-item { padding: 3px; border-radius: 2px; color: #070913; font-size: 8px; font-weight: 600; display: flex; justify-content: space-between; align-items: flex-start;}
 .postit-del { color: #dc2626; cursor: pointer; margin-left: 2px; font-weight: bold;}
 
-/* 자동 메일 */
 .mailer-ui-box { display: flex; flex-direction: column; gap: 2px; height: 100%; }
 .mailer-ui-box textarea { background: #070913; border: 1px solid #1c1e36; color: #00f0ad; font-family: monospace; font-size: 8px; resize: none; height: 26px; padding: 2px; border-radius: 2px;}
 .btn-mail-dispatch { background: #ffb800; color: #070913; border: none; font-weight: bold; padding: 3px; border-radius: 2px; font-size: 8px; cursor: pointer; width: 100%; }
 
-/* 이미지 26 정산 결과 콤팩트 이식 파트 */
 .invoice-split-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4px; height: 100%; flex: 1; align-items: center;}
 .inv-uploader-trigger { border: 1px dashed #222954; background: #070913; border-radius: 3px; text-align: center; cursor: pointer; padding: 4px; height: 100%; display: flex; flex-direction: column; justify-content: center;}
 .inv-uploader-trigger p { font-size: 7px; color: #7882b6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
@@ -217,25 +193,10 @@ body {
 .b-ins-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
 .b-ins-list li { background: #121424; padding: 2px; border-left: 2px solid #00f0ad; font-size: 8px;}
 
-/* 유틸리티 폰트 컬러 */
 .font-pink { color: #ff4a85; }
 .font-mint { color: #00f0ad; }
 .font-gold { color: #ffb800; }
-.font-purple { color: #a855f7; }
 
-/* 미니 달력 */
-.mini-calendar { background: #070913; padding: 4px; border-radius: 3px; flex: 1;}
-.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; font-size: 8px;}
-.day-label { color: #535b82; font-weight: bold; }
-.active-day { background: #ff4a85; color: white; font-weight: bold; border-radius: 2px; }
-
-/* 도넛 분석 */
-.vacation-body { display: flex; align-items: center; gap: 6px; background: #070913; padding: 4px; border-radius: 3px; flex: 1;}
-.chart-wrapper { width: 36px; height: 36px; }
-.vacation-details { flex: 1; display: flex; flex-direction: column; gap: 1px; font-size: 8px;}
-.vacation-details div { display: flex; justify-content: space-between; border-bottom: 1px dashed #1c1e36; }
-
-/* 모달 레이어 */
 .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center; z-index:999; }
 .modal-window { background:#121424; border:1px solid #ff4a85; width:300px; border-radius:4px; padding:12px; text-align:center; }
 .modal-header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1c1e36; padding-bottom:3px; margin-bottom:6px; font-size:10px;}
@@ -246,8 +207,3 @@ body {
 .spinner-loading { text-align: center; padding: 5px 0; }
 .circle-spin { width: 12px; height: 12px; border: 2px solid #1c1e36; border-top: 2px solid #00f0ad; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 3px auto; }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-/* 스크롤바 커스텀 */
-::-webkit-scrollbar { width: 3px; height: 3px; }
-::-webkit-scrollbar-track { background: #070913; }
-::-webkit-scrollbar-thumb { background: #1c1e36; border-radius: 1px; }

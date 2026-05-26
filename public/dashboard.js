@@ -13,7 +13,6 @@
         startClock();
         renderHeatmap();
         renderTrendLineChart();
-        initVacationDoughnut();
         fetchChatStream();
         fetchPostIts();
         fetchWorkAssignments();
@@ -138,8 +137,8 @@
                     <div class="stat-m-card"><span>리스크</span><strong>0%</strong></div>
                 </div>
                 <ul class="b-ins-list">
-                    <li>📋 Genspark AI 생산성 도구 해외 정기 구독 결제 영수증 매칭 완료.</li>
-                    <li>⚠️ 달러 환산 원천징수 세법 조항 대조 통과 (연구비 집행 적합).</li>
+                    <li> G-Spark AI 생산성 도구 해외 정기 구독 결제 영수증 매칭 완료.</li>
+                    <li> 달러 환산 원천징수 세법 조항 대조 통과 (연구비 집행 적합).</li>
                 </ul>`;
         }, 800);
     };
@@ -157,17 +156,7 @@
         new Chart(ctx, {
             type: 'line',
             data: { labels: ['월', '화', '수', '목', '금'], datasets: [{ data: [75, 88, 92, 85, 95], borderColor: '#ff4a85', backgroundColor: 'rgba(255,74,133,0.08)', borderWidth: 1.5, fill: true, tension:0.2 }] },
-            options: { plugins: { legend: { display: false } }, responsive: true, maintainAspectRatio: false, scales: { y: { grid: { color: '#1c1e36' }, ticks:{font:{size:7}} }, x: { grid: { display: false }, ticks:{font:{size:7}} } } }
-        });
-    }
-
-    function initVacationDoughnut() {
-        const ctx = document.getElementById('vacationChart');
-        if(!ctx) return;
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: { datasets: [{ data: [4, 2, 11], backgroundColor: ['#2563eb', '#ffb800', '#00f0ad'], borderWidth: 0 }] },
-            options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins:{legend:{display:false}} }
+            options: { plugins: { legend: { display: false } }, responsive: true, maintainAspectRatio: false, scales: { y: { grid: { color: '#1c1e36' }, ticks:{font:{size:7}, color:'#7882b6'} }, x: { grid: { display: false }, ticks:{font:{size:7}, color:'#7882b6'} } } }
         });
     }
 
