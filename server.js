@@ -9,14 +9,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
-// 동적 데이터 무결성 유지를 위한 실시간 메모리 데이터베이스
+// 온라인 데이터 무결성을 위한 실시간 메모리 데이터베이스
 let messages = [
-    { sender: "김팀장", text: "남수호 연구원, KCI 메타분석 데이터 정산 검역 올려주세요.", time: "23:12" },
+    { sender: "김팀장", text: "남수호 연구원, KCI 메타분석 정산 검역 올려주세요.", time: "23:12" },
     { sender: "남수호", text: "네 팀장님, AI 검역 결과 통과되어 실시간 전산 등록 완료했습니다.", time: "23:15" }
 ];
 
 let postits = [
-    { id: 1, text: "6/15 제주 학술대회 비행기 예약 필수", color: "#fff59d" }
+    { id: 1, text: "6/15 제주 학술대회 비행기 예약 필수", color: "#fef3c7" }
 ];
 
 let workload = {

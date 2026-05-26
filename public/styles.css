@@ -120,6 +120,7 @@ body {
 
 .todo-list { list-style: none; display: flex; flex-direction: column; gap: 3px; overflow-y: auto;}
 .todo-list li { background: #070913; padding: 3px 5px; border-radius: 3px; display: flex; align-items: center; gap: 4px; font-size: 10px;}
+.score { font-size: 7px; margin-left: auto; color: #ff4a85; }
 .tag-pink { color: #ff4a85; font-size: 8px; font-weight: bold;}
 .tag-gold { color: #ffb800; font-size: 8px; font-weight: bold;}
 .tag-blue { color: #3b82f6; font-size: 8px; font-weight: bold;}
@@ -196,6 +197,7 @@ body {
 .font-pink { color: #ff4a85; }
 .font-mint { color: #00f0ad; }
 .font-gold { color: #ffb800; }
+.font-purple { color: #a855f7; }
 
 .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:none; align-items:center; justify-content:center; z-index:999; }
 .modal-window { background:#121424; border:1px solid #ff4a85; width:300px; border-radius:4px; padding:12px; text-align:center; }
